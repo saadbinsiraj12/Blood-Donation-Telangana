@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telangana Blood Donation Network</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="preloader">
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-tint blood-icon"></i>
+                <span>Telangana Blood Network</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#request" class="nav-link">Request Blood</a></li>
+                    <li><a href="#donate" class="nav-link">Donate Blood</a></li>
+                    <li><a href="#donors" class="nav-link">Find Donors</a></li>
+                    <li><a href="#requests" class="nav-link">Blood Requests</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Save Lives, Donate Blood</h1>
+                    <p class="hero-subtitle">Join Telangana's largest blood donation network. Every drop counts.</p>
+                    <div class="hero-buttons">
+                        <a href="#request" class="btn btn-primary">I Need Blood</a>
+                        <a href="#donate" class="btn btn-secondary">I Want to Donate</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://www.svgrepo.com/show/491685/blood-donation.svg" alt="Blood Donation Illustration" class="pulse">
+                </div>
+            </div>
+        </section>
+
+        <section class="blood-groups">
+            <div class="container">
+                <h2 class="section-title">Blood Groups</h2>
+                <div class="blood-group-grid">
+                    <div class="blood-group-card" data-group="A+">
+                        <div class="blood-group-label">A+</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: A+, AB+</p>
+                            <p>Can receive from: A+, A-, O+, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="A-">
+                        <div class="blood-group-label">A-</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: A+, A-, AB+, AB-</p>
+                            <p>Can receive from: A-, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="B+">
+                        <div class="blood-group-label">B+</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: B+, AB+</p>
+                            <p>Can receive from: B+, B-, O+, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="B-">
+                        <div class="blood-group-label">B-</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: B+, B-, AB+, AB-</p>
+                            <p>Can receive from: B-, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="AB+">
+                        <div class="blood-group-label">AB+</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: AB+</p>
+                            <p>Can receive from: All blood types</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="AB-">
+                        <div class="blood-group-label">AB-</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: AB+, AB-</p>
+                            <p>Can receive from: A-, B-, AB-, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="O+">
+                        <div class="blood-group-label">O+</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: A+, B+, AB+, O+</p>
+                            <p>Can receive from: O+, O-</p>
+                        </div>
+                    </div>
+                    <div class="blood-group-card" data-group="O-">
+                        <div class="blood-group-label">O-</div>
+                        <div class="blood-group-info">
+                            <p>Can donate to: All blood types</p>
+                            <p>Can receive from: O-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="request" class="request-blood">
+            <div class="container">
+                <h2 class="section-title">Request Blood</h2>
+                <form id="requestForm" class="blood-form">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientAge">Age</label>
+                            <input type="number" id="patientAge" min="1" max="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodGroupReq">Blood Group</label>
+                            <select id="bloodGroupReq" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospital">Hospital Name</label>
+                        <input type="text" id="hospital" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="districtReq">District</label>
+                            <select id="districtReq" required>
+                                <option value="">Select District</option>
+                                <option value="Adilabad">Adilabad</option>
+                                <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jagtial">Jagtial</option>
+                                <option value="Jangaon">Jangaon</option>
+                                <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+                                <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+                                <option value="Kamareddy">Kamareddy</option>
+                                <option value="Karimnagar">Karimnagar</option>
+                                <option value="Khammam">Khammam</option>
+                                <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+                                <option value="Mahabubabad">Mahabubabad</option>
+                                <option value="Mahabubnagar">Mahabubnagar</option>
+                                <option value="Mancherial">Mancherial</option>
+                                <option value="Medak">Medak</option>
+                                <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+                                <option value="Mulugu">Mulugu</option>
+                                <option value="Nagarkurnool">Nagarkurnool</option>
+                                <option value="Nalgonda">Nalgonda</option>
+                                <option value="Narayanpet">Narayanpet</option>
+                                <option value="Nirmal">Nirmal</option>
+                                <option value="Nizamabad">Nizamabad</option>
+                                <option value="Peddapalli">Peddapalli</option>
+                                <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+                                <option value="Rangareddy">Rangareddy</option>
+                                <option value="Sangareddy">Sangareddy</option>
+                                <option value="Siddipet">Siddipet</option>
+                                <option value="Suryapet">Suryapet</option>
+                                <option value="Vikarabad">Vikarabad</option>
+                                <option value="Wanaparthy">Wanaparthy</option>
+                                <option value="Warangal Rural">Warangal Rural</option>
+                                <option value="Warangal Urban">Warangal Urban</option>
+                                <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="unitsRequired">Units Required</label>
+                            <input type="number" id="unitsRequired" min="1" max="10" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumberReq">Contact Number</label>
+                        <input type="tel" id="contactNumberReq" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level</label>
+                        <select id="urgency" required>
+                            <option value="normal">Normal (Within 3 days)</option>
+                            <option value="urgent">Urgent (Within 24 hours)</option>
+                            <option value="emergency">Emergency (Immediately)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="donate" class="donate-blood">
+            <div class="container">
+                <h2 class="section-title">Donate Blood</h2>
+                <form id="donateForm" class="blood-form">
+                    <div class="form-group">
+                        <label for="donorName">Donor Name</label>
+                        <input type="text" id="donorName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="donorAge">Age</label>
+                            <input type="number" id="donorAge" min="18" max="65" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodGroupDonate">Blood Group</label>
+                            <select id="bloodGroupDonate" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastDonation">Last Donation Date</label>
+                        <input type="date" id="lastDonation">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="districtDonate">District</label>
+                            <select id="districtDonate" required>
+                                <option value="">Select District</option>
+                                <option value="Adilabad">Adilabad</option>
+                                <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jagtial">Jagtial</option>
+                                <option value="Jangaon">Jangaon</option>
+                                <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+                                <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+                                <option value="Kamareddy">Kamareddy</option>
+                                <option value="Karimnagar">Karimnagar</option>
+                                <option value="Khammam">Khammam</option>
+                                <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+                                <option value="Mahabubabad">Mahabubabad</option>
+                                <option value="Mahabubnagar">Mahabubnagar</option>
+                                <option value="Mancherial">Mancherial</option>
+                                <option value="Medak">Medak</option>
+                                <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+                                <option value="Mulugu">Mulugu</option>
+                                <option value="Nagarkurnool">Nagarkurnool</option>
+                                <option value="Nalgonda">Nalgonda</option>
+                                <option value="Narayanpet">Narayanpet</option>
+                                <option value="Nirmal">Nirmal</option>
+                                <option value="Nizamabad">Nizamabad</option>
+                                <option value="Peddapalli">Peddapalli</option>
+                                <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+                                <option value="Rangareddy">Rangareddy</option>
+                                <option value="Sangareddy">Sangareddy</option>
+                                <option value="Siddipet">Siddipet</option>
+                                <option value="Suryapet">Suryapet</option>
+                                <option value="Vikarabad">Vikarabad</option>
+                                <option value="Wanaparthy">Wanaparthy</option>
+                                <option value="Warangal Rural">Warangal Rural</option>
+                                <option value="Warangal Urban">Warangal Urban</option>
+                                <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" required>
+                                <option value="immediate">Immediately</option>
+                                <option value="week">Within a Week</option>
+                                <option value="month">Within a Month</option>
+                                <option value="oncall">On Call Basis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumberDonate">Contact Number</label>
+                        <input type="tel" id="contactNumberDonate" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="healthInfo">Health Information</label>
+                        <textarea id="healthInfo" rows="3" placeholder="Any health conditions, medications, etc."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="termsAgree" required>
+                        <label for="termsAgree">I agree to the terms and conditions and confirm that I meet all eligibility criteria for blood donation</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register as Donor</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="donors" class="donor-list">
+            <div class="container">
+                <h2 class="section-title">Find Blood Donors</h2>
+                <div class="search-filters">
+                    <div class="form-group">
+                        <label for="searchBloodGroup">Blood Group</label>
+                        <select id="searchBloodGroup">
+                            <option value="">All Blood Groups</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchDistrict">District</label>
+                        <select id="searchDistrict">
+                            <option value="">All Districts</option>
+                            <option value="Adilabad">Adilabad</option>
+                            <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Jagtial">Jagtial</option>
+                            <option value="Jangaon">Jangaon</option>
+                            <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+                            <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+                            <option value="Kamareddy">Kamareddy</option>
+                            <option value="Karimnagar">Karimnagar</option>
+                            <option value="Khammam">Khammam</option>
+                            <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+                            <option value="Mahabubabad">Mahabubabad</option>
+                            <option value="Mahabubnagar">Mahabubnagar</option>
+                            <option value="Mancherial">Mancherial</option>
+                            <option value="Medak">Medak</option>
+                            <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+                            <option value="Mulugu">Mulugu</option>
+                            <option value="Nagarkurnool">Nagarkurnool</option>
+                            <option value="Nalgonda">Nalgonda</option>
+                            <option value="Narayanpet">Narayanpet</option>
+                            <option value="Nirmal">Nirmal</option>
+                            <option value="Nizamabad">Nizamabad</option>
+                            <option value="Peddapalli">Peddapalli</option>
+                            <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+                            <option value="Rangareddy">Rangareddy</option>
+                            <option value="Sangareddy">Sangareddy</option>
+                            <option value="Siddipet">Siddipet</option>
+                            <option value="Suryapet">Suryapet</option>
+                            <option value="Vikarabad">Vikarabad</option>
+                            <option value="Wanaparthy">Wanaparthy</option>
+                            <option value="Warangal Rural">Warangal Rural</option>
+                            <option value="Warangal Urban">Warangal Urban</option>
+                            <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+                        </select>
+                    </div>
+                    <button id="searchDonors" class="btn btn-secondary">Search</button>
+                </div>
+                <div class="donor-table-container">
+                    <table class="donor-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>District</th>
+                                <th>Availability</th>
+                                <th>Last Donation</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donorTableBody">
+                            <!-- Donor data will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="requests" class="request-list">
+            <div class="container">
+                <h2 class="section-title">Blood Requests</h2>
+                <div class="search-filters">
+                    <div class="form-group">
+                        <label for="searchRequestBloodGroup">Blood Group</label>
+                        <select id="searchRequestBloodGroup">
+                            <option value="">All Blood Groups</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchRequestDistrict">District</label>
+                        <select id="searchRequestDistrict">
+                            <option value="">All Districts</option>
+                            <option value="Adilabad">Adilabad</option>
+                            <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Jagtial">Jagtial</option>
+                            <option value="Jangaon">Jangaon</option>
+                            <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+                            <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+                            <option value="Kamareddy">Kamareddy</option>
+                            <option value="Karimnagar">Karimnagar</option>
+                            <option value="Khammam">Khammam</option>
+                            <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+                            <option value="Mahabubabad">Mahabubabad</option>
+                            <option value="Mahabubnagar">Mahabubnagar</option>
+                            <option value="Mancherial">Mancherial</option>
+                            <option value="Medak">Medak</option>
+                            <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+                            <option value="Mulugu">Mulugu</option>
+                            <option value="Nagarkurnool">Nagarkurnool</option>
+                            <option value="Nalgonda">Nalgonda</option>
+                            <option value="Narayanpet">Narayanpet</option>
+                            <option value="Nirmal">Nirmal</option>
+                            <option value="Nizamabad">Nizamabad</option>
+                            <option value="Peddapalli">Peddapalli</option>
+                            <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+                            <option value="Rangareddy">Rangareddy</option>
+                            <option value="Sangareddy">Sangareddy</option>
+                            <option value="Siddipet">Siddipet</option>
+                            <option value="Suryapet">Suryapet</option>
+                            <option value="Vikarabad">Vikarabad</option>
+                            <option value="Wanaparthy">Wanaparthy</option>
+                            <option value="Warangal Rural">Warangal Rural</option>
+                            <option value="Warangal Urban">Warangal Urban</option>
+                            <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchUrgency">Urgency</label>
+                        <select id="searchUrgency">
+                            <option value="">All</option>
+                            <option value="emergency">Emergency</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                    </div>
+                    <button id="searchRequests" class="btn btn-secondary">Search</button>
+                </div>
+                <div class="request-table-container">
+                    <table class="request-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>Hospital</th>
+                                <th>District</th>
+                                <th>Units</th>
+                                <th>Urgency</th>
+                                <th>Contact</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requestTableBody">
+                            <!-- Request data will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Telangana Blood Network</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Telangana Blood Network is a non-profit initiative dedicated to connecting blood donors with patients in need across Telangana. Our mission is to ensure that no patient dies due to unavailability of blood.</p>
+                        <p>Founded in 2023, we have facilitated over 10,000 blood donations across all districts of Telangana. Our network includes voluntary donors, hospitals, and blood banks working together to save lives.</p>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="donorsCount">0</div>
+                                <div class="stat-label">Registered Donors</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="requestsCount">0</div>
+                                <div class="stat-label">Requests Fulfilled</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="districtsCount">33</div>
+                                <div class="stat-label">Districts Covered</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" id="hospitalsCount">150+</div>
+                                <div class="stat-label">Partner Hospitals</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://www.svgrepo.com/show/530438/blood-donation.svg" alt="About Blood Donation">
+                    </div>
+                </div>
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Who can donate blood?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Generally, donors must be between 18-65 years old, weigh at least 50kg, and be in good health. There should be at least 56 days between donations for males and 84 days for females.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is blood donation safe?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, blood donation is completely safe. Sterile, disposable equipment is used for each donor, so there's no risk of contracting any infection.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does the donation process take?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The entire process takes about 45 minutes to an hour, with the actual blood donation taking only 8-10 minutes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What should I do before donating blood?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Eat a healthy meal before donating, drink plenty of fluids, and get a good night's sleep. Avoid fatty foods before donation as they can affect blood tests.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Telangana Blood Network</h3>
+                    <p>Connecting donors with recipients across Telangana to save lives through voluntary blood donation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#request">Request Blood</a></li>
+                        <li><a href="#donate">Donate Blood</a></li>
+                        <li><a href="#donors">Find Donors</a></li>
+                        <li><a href="#requests">Blood Requests</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
+                        <li><i class="fas fa-phone"></i> +91 9052987610</li>
+                        <li><i class="fas fa-envelope"></i> info@telanganablood.org</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Emergency Contacts</h3>
+                    <ul class="emergency-contacts">
+                        <li>Blood Bank Hyderabad: 104</li>
+                        <li>Emergency Ambulance: 108</li>
+                        <li>NTR Blood Bank: 040-23456789</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Telangana Blood Network. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="modal-title">Success!</h3>
+            <p class="modal-message" id="successMessage">Your request has been submitted successfully.</p>
+            <button class="btn btn-primary modal-close-btn">OK</button>
+        </div>
+    </div>
+
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon error">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h3 class="modal-title">Error!</h3>
+            <p class="modal-message" id="errorMessage">There was an error processing your request. Please try again.</p>
+            <button class="btn btn-primary modal-close-btn">OK</button>
+        </div>
+    </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title">Contact Donor</h3>
+            <div class="modal-info" id="donorContactInfo">
+                <!-- Donor contact info will be inserted here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+                <a href="#" class="btn btn-primary" id="contactDonorBtn">Call Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
